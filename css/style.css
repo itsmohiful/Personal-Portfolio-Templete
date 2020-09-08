@@ -140,8 +140,8 @@ main {
 }
 
 main section .hero-section {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(221, 224, 226, 0.3)), to(rgba(221, 225, 228, 0.3))), url("../img/hero/p.png") no-repeat center top;
-  background: linear-gradient(rgba(221, 224, 226, 0.3), rgba(221, 225, 228, 0.3)), url("../img/hero/p.png") no-repeat center top;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(103, 164, 204, 0.3)), to(rgba(98, 149, 189, 0.3))), url("../img/hero/p.png") no-repeat center top;
+  background: linear-gradient(rgba(103, 164, 204, 0.3), rgba(98, 149, 189, 0.3)), url("../img/hero/p.png") no-repeat center top;
   background-size: cover;
   min-height: 43rem;
 }
@@ -273,6 +273,7 @@ main section .hero-section .main-hero a .btn-2:hover {
 /*====  START ABOUT=====*/
 section.about {
   position: relative;
+  background: linear-gradient(195deg, var(--high-color) 50%, #8cc7c9c5 33%);
 }
 
 section.about h2 {
@@ -622,7 +623,8 @@ section.client .client-area .slider-btn .right-0 {
 /*====END CLLIENT SECTION=====*/
 /*====START ABOUT PAGE=====*/
 section.about-page {
-  background: url("../img/hero/hero2.jpg") no-repeat;
+  background: -webkit-gradient(linear, left top, left bottom, from(#88c5c7), to(#fafafa)), url("../img/hero/tooplate_header1.jpg") no-repeat;
+  background: linear-gradient(#88c5c7, #fafafa), url("../img/hero/tooplate_header1.jpg") no-repeat;
   min-height: 24rem;
   background-attachment: cover;
 }
@@ -654,7 +656,7 @@ section.about-page .btn-1:hover {
 
 section.about-des {
   margin-top: 5rem !important;
-  background: var(--high-color);
+  background: linear-gradient(153deg, var(--high-color) 60%, #8cc7c9c5 30%);
 }
 
 section.about-des h3 {
@@ -681,6 +683,55 @@ section.about-des blockquote .blockquote-footer {
   background: var(--primary-color);
 }
 
+section.about-des .img-section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+section.about-des .img-section img {
+  width: 95%;
+  height: 98%;
+  border-top: 4px solid #555;
+}
+
+section.about-des .img-section .img-text {
+  width: 95%;
+  height: 98%;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: -49%;
+  color: #fff;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  cursor: pointer;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+section.about-des .img-section .img-text h4 {
+  margin: 28% 0;
+  text-transform: uppercase;
+  line-height: 5rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+section.about-des .img-section .img-text h4 span {
+  color: var(--primary-color);
+  padding: 5px;
+}
+
+section.about-des .img-section .img-text h4 span i {
+  margin-top: -10px;
+}
+
+section.about-des .img-section:hover .img-text {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  top: 0;
+}
+
 @media (max-width: 575px) {
   section.about-page {
     min-height: 24rem !important;
@@ -690,6 +741,15 @@ section.about-des blockquote .blockquote-footer {
     float: left;
     margin-left: 3rem;
     margin-top: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  section.about-des .img-section .img-text h4 {
+    margin: 30% 5px;
+    line-height: 2rem;
+    letter-spacing: 2px;
+    font-size: 24px !important;
   }
 }
 
@@ -740,6 +800,10 @@ section.skill .skill-div .skill-title h2 {
 /*====END SKILL SECTION=====*/
 /*====END ABOUT PAGE=====*/
 /*====START PORTFOLIO PAGE=====*/
+section.projects-work {
+  background: linear-gradient(30deg, var(--high-color) 60%, #8cc7c9c5 33%);
+}
+
 section.projects-work h1 {
   font-family: var(--roboto);
   color: var(--primary-color);
@@ -797,42 +861,51 @@ section.blog-page .blog {
 
 section.blog-page .blog .blog-img {
   margin-bottom: 3rem;
-  z-index: -999;
+  width: 100%;
+  position: relative;
+  border-bottom: 3px solid var(--primary-color);
 }
 
 section.blog-page .blog .blog-img img {
   width: 100%;
-  z-index: -99;
-  opacity: 1;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
-section.blog-page .blog .blog-img .author {
+section.blog-page .blog .blog-img .date-author {
+  width: 100%;
+  background: var(--primary-color);
+  position: absolute;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  margin-top: -1rem;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+}
+
+section.blog-page .blog .blog-img .date-author .author {
   float: left;
   background: var(--primary-color);
-  width: 49%;
-  border-top-right-radius: 18px;
-  border-bottom-right-radius: 18px;
+  width: 50%;
 }
 
-section.blog-page .blog .blog-img .author h6 {
+section.blog-page .blog .blog-img .date-author .author h6 {
   color: #fff;
   padding: 5px 0;
   padding-left: 1rem;
 }
 
-section.blog-page .blog .blog-img .author h6 i {
+section.blog-page .blog .blog-img .date-author .author h6 i {
   padding: 0 0.8rem;
 }
 
-section.blog-page .blog .blog-img .date {
+section.blog-page .blog .blog-img .date-author .date {
   float: right;
   background: var(--primary-color);
-  width: 49%;
-  border-top-left-radius: 18px;
-  border-bottom-left-radius: 18px;
+  width: 50%;
 }
 
-section.blog-page .blog .blog-img .date h6 {
+section.blog-page .blog .blog-img .date-author .date h6 {
   float: right;
   color: #fff;
   padding: 5px 0;
@@ -840,12 +913,24 @@ section.blog-page .blog .blog-img .date h6 {
   padding-right: 1rem;
 }
 
-section.blog-page .blog .blog-img .date h6 i {
+section.blog-page .blog .blog-img .date-author .date h6 i {
   padding: 0 0.8rem;
+}
+
+section.blog-page .blog .blog-img:hover img {
+  -webkit-filter: brightness(0.3);
+          filter: brightness(0.3);
+}
+
+section.blog-page .blog .blog-img:hover .date-author {
+  margin-top: -2rem;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
 }
 
 section.blog-page .blog .blog-des {
   padding-left: 1rem;
+  background: linear-gradient(143deg, var(--high-color) 68%, #8cc7c9 22%);
 }
 
 section.blog-page .blog .blog-des a {
@@ -952,6 +1037,27 @@ section.blog-page .blog .pages .page-item {
   outline: none !important;
 }
 
+section.blog-page .blog-category form {
+  width: 100%;
+}
+
+section.blog-page .blog-category form input {
+  width: 75% !important;
+}
+
+section.blog-page .blog-category form button {
+  width: 20% !important;
+}
+
+section.blog-page .blog-category form .btn {
+  padding: 3.8px 0;
+}
+
+section.blog-page .blog-category ul li:hover {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
 section.blog-page .blog-category button {
   color: #fff;
   background: var(--primary-color);
@@ -970,24 +1076,30 @@ section.blog-page .blog-card .card-text {
 }
 
 @media (max-width: 575px) {
-  section.blog-page .blog .blog-img .author {
-    width: 90%;
+  section.blog-page .blog .blog-img .date-author {
+    margin-top: -2rem;
   }
-  section.blog-page .blog .blog-img .author h6 {
+  section.blog-page .blog .blog-img .date-author .author {
+    width: 100% !important;
+  }
+  section.blog-page .blog .blog-img .date-author .author h6 {
     padding: 2px 0;
   }
-  section.blog-page .blog .blog-img .author h6 i {
+  section.blog-page .blog .blog-img .date-author .author h6 i {
     padding: 0 10px;
   }
-  section.blog-page .blog .blog-img .date {
-    width: 90%;
+  section.blog-page .blog .blog-img .date-author .date {
+    width: 100% !important;
   }
-  section.blog-page .blog .blog-img .date h6 {
+  section.blog-page .blog .blog-img .date-author .date h6 {
+    float: left !important;
     padding: 2px 0;
-    padding-right: 1rem;
   }
-  section.blog-page .blog .blog-img .date h6 i {
+  section.blog-page .blog .blog-img .date-author .date h6 i {
     padding: 0 10px;
+  }
+  section.blog-page .blog .blog-img:hover .date-author {
+    margin-top: -3.8rem;
   }
 }
 
@@ -1000,7 +1112,7 @@ section.blog-page .blog-card .card-text {
 /*====END BLOG PAGE=====*/
 /*====START CONTACT PAGE=====*/
 section.contact {
-  background: var(--high-color);
+  background: linear-gradient(150deg, #8CC7C9 45%, var(--high-color) 0%);
 }
 
 section.contact .form-section {
@@ -1078,13 +1190,13 @@ footer {
 
 footer .main-footer {
   padding-top: 3rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   border-bottom: 2px solid var(--primary-color);
 }
 
 footer .main-footer h5,
 footer .main-footer h3 {
-  margin-bottom: 3rem;
+  margin-bottom: 2.4rem;
 }
 
 footer .main-footer h3 {
@@ -1103,6 +1215,11 @@ footer .main-footer a {
   text-decoration: none;
   color: #fff;
   cursor: pointer;
+}
+
+footer .main-footer .some-link .br-1,
+footer .main-footer .some-link .br-2 {
+  margin-top: -2.2rem;
 }
 
 footer .main-footer .some-link a {
